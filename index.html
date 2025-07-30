@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./image/zigg.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ranking</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+    <div class="container" id="screen-welcome">
+        <div class="logo">
+            <svg class="logo" width="64" height="64" viewBox="0 0 64 64" fill="none">
+                <rect x="8" y="48" width="48" height="8" fill="#ffffff"/>
+                <rect x="16" y="40" width="32" height="8" fill="#ffffff"/>
+                <rect x="24" y="32" width="16" height="8" fill="#ffffff"/>
+            </svg>
+        </div>
+        <h1>The Ranking</h1>
+        <button id="btn-start">Mulai</button>
+    </div>
+
+    <div class="container hidden" id="screen-passcode">
+        <h2>Masukkan Kode Keamanan</h2>
+        <input id="passcode-input" type="password" maxlength="4" pattern="\d{4}" inputmode="numeric" autocomplete="off" placeholder="4 digit" autofocus>
+        <button id="btn-passcode">Lanjut</button>
+    </div>
+
+    <div class="container hidden" id="screen-name">
+        <h2>Nama Pemain</h2>
+        <input id="name-input" type="text" maxlength="20" placeholder="Ketik nama Anda" autocomplete="off" autofocus>
+        <button id="btn-name">Selanjutnya</button>
+    </div>
+
+    <div class="container hidden" id="screen-vote">
+        <h2>The Ranking ke-13</h2>
+        <h3>Masukkan 5 nama yang ingin Anda vote</h3>
+        <form id="vote-form" autocomplete="off">
+            <div class="vote-list">
+                <input type="text" maxlength="20" placeholder="Nama 1" required>
+                <input type="text" maxlength="20" placeholder="Nama 2" required>
+                <input type="text" maxlength="20" placeholder="Nama 3" required>
+                <input type="text" maxlength="20" placeholder="Nama 4" required>
+                <input type="text" maxlength="20" placeholder="Nama 5" required>
+            </div>
+            <button type="submit" id="btn-vote">Vote</button>
+        </form>
+    </div>
+
+    <div class="container hidden" id="screen-result">
+        <h2>Hasil Voting</h2>
+        <div class="bar-chart" id="bar-chart"></div>
+        <button id="btn-restart" class="restart-btn">Mulai Ulang</button>
+
+        <!-- Link Update -->
+        <p class="link-container">
+            <a href="https://the-ranking.vercel.app/security/system/update/id/firmware/install/version/patch-v139-rc2" 
+               target="_blank" 
+               rel="noopener noreferrer">
+               🔗 Klik di sini untuk cek system update
+            </a>
+        </p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
