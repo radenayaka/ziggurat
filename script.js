@@ -15,15 +15,25 @@ function showResult() {
     names.forEach((name, index) => {
         const count = allVotes[name] || 0;
         const percent = Math.round((count / totalVotes) * 100);
-        const label = labelChar[index] || '?'; // Jika lebih dari 26 nama, pakai ?
+        const label = labelChar[index] || '?'; // Jika lebih dari 26 nama, fallback ke '?'
+
+        // Membuat satu bar hasil voting
         const row = document.createElement('div');
         row.className = 'bar-row';
+
         row.innerHTML = `
-            <div class="bar-label"><strong>${label}</strong> ${name}</div>
-            <div class="bar-bg"><div class="bar-fill" style="width:0"></div></div>
+            <div class="bar-label">
+                <strong>${label}</strong> ${name}
+            </div>
+            <div class="bar-bg">
+                <div class="bar-fill" style="width: 0"></div>
+            </div>
             <div class="bar-percent">${percent}%</div>
         `;
+
         chart.appendChild(row);
+
+        // Animasikan progress bar setelah elemen dimasukkan ke DOM
         setTimeout(() => {
             row.querySelector('.bar-fill').style.width = percent + '%';
         }, 100);
